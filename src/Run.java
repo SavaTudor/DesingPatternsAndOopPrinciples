@@ -4,6 +4,8 @@ import modules.Task;
 import runner.PrinterTaskRunner;
 import runner.StrategyTaskRunner;
 import runner.TaskRunner;
+import utils.Order;
+import utils.Sort;
 
 import java.time.LocalDateTime;
 
@@ -27,14 +29,21 @@ public class Run {
         strategyTaskRunner.executeAll();
 
          */
-        runPrinterTaskRunner();
+//        runPrinterTaskRunner();
+        int[] arr = {4, 2, 120, 4, 5, 6};
+        Sort.quickSort(arr, 0, arr.length-1, Order.ASCENDING);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+
     }
 
-    private static void runPrinterTaskRunner(){
+    private static void runPrinterTaskRunner() {
         final MessageTask[] messageTasks = createMessageTaskArray();
         final StrategyTaskRunner strategyTaskRunner = new StrategyTaskRunner(Strategy.LIFO);
 
-        for (Task task:messageTasks){
+        for (Task task : messageTasks) {
             strategyTaskRunner.addTask(task);
         }
         final PrinterTaskRunner printerTaskRunner = new PrinterTaskRunner(strategyTaskRunner);

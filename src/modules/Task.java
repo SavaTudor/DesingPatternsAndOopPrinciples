@@ -19,11 +19,11 @@ public abstract class Task {
         this.taskId = taskId;
     }
 
-    public String getdescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setdescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -34,7 +34,7 @@ public abstract class Task {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTaskId(), getdescription());
+        return Objects.hash(getTaskId(), getDescription());
     }
 
     @Override
@@ -47,7 +47,7 @@ public abstract class Task {
         }
         Task task = (Task) o;
 
-        return Objects.equals(this.getTaskId(), task.getTaskId()) && Objects.equals(this.getdescription(), task.getdescription());
+        return Objects.equals(this.getTaskId(), task.getTaskId()) && Objects.equals(this.getDescription(), task.getDescription());
     }
 
     public abstract void execute();
