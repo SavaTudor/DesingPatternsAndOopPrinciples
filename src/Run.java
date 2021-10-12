@@ -5,7 +5,8 @@ import runner.PrinterTaskRunner;
 import runner.StrategyTaskRunner;
 import runner.TaskRunner;
 import utils.Order;
-import utils.Sort;
+import utils.sort.BubbleSort;
+import utils.sort.QuickSort;
 
 import java.time.LocalDateTime;
 
@@ -31,7 +32,8 @@ public class Run {
          */
 //        runPrinterTaskRunner();
         int[] arr = {4, 2, 120, 4, 5, 6};
-        Sort.quickSort(arr, 0, arr.length-1, Order.ASCENDING);
+//        BubbleSort.sort(arr, Order.DESCENDING);
+        QuickSort.sort(arr, Order.ASCENDING);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
