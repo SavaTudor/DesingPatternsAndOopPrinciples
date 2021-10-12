@@ -1,10 +1,14 @@
 package sorter;
 
-abstract public class AbstractSorter implements Sorter {
-    Sorter sorter;
+import utils.Order;
 
-    public AbstractSorter(Sorter sorter) {
-        this.sorter = sorter;
+abstract public class AbstractSorter implements Sorter {
+    int[] array;
+    Order order;
+
+    public AbstractSorter(int[] array, Order order) {
+        this.array = array;
+        this.order = order;
     }
 
     @Override
